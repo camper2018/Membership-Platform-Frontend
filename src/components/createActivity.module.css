@@ -1,0 +1,17 @@
+/* Registration dropdown options style */
+.dropdown {
+  font-size: 16px;
+  margin: 0;
+}
+
+.invalidInput {
+  border: none;
+}
+.invalidInput:disabled {
+  background-color: white;
+}
+
+.formCheckLabel {
+  font-family: "robo, Arial, Helvetica, sans-serif";
+  font-weight: bold;
+}
