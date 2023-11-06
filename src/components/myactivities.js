@@ -41,7 +41,6 @@ const MyActivities = () => {
         const date = new Date().toISOString();
 
         activities.data.forEach((activity) => {
-          console.log(activity);
           if (activity?.eventId?.endDateTime >= date) {
             volunteerActivities.push({
               name: activity.event,

@@ -36,7 +36,6 @@ const Volunteer = (props) => {
         let path = `VolunteerSignup`;
         //history.push(path);
         setShowEvent(params);
-        console.log(params);
 
     }
 

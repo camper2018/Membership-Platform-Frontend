@@ -16,7 +16,6 @@ const EventDetail = (props) => {
     setShowRegisterForm(true);
   };
   const handleAddVolunteers = () => {
-    //routeChange(props.data.eventTitle);
     setShowVolunteerForm(true);
   };
   const eventStartDate = new Date(
@@ -29,12 +28,6 @@ const EventDetail = (props) => {
     return timeArray.join("");
   };
 
-  // const routeChange = (params) => {
-  //   let path = `VolunteerSignup`;
-  //   //history.push(path);
-  //   setShowVolunteerForm(params);
-  //   console.log(params);
-  // };
 
   const eventStartTime = formatTime(props.data.startDateTime);
   const eventEndTime = formatTime(props.data.endDateTime);
@@ -42,7 +35,6 @@ const EventDetail = (props) => {
   // so decimal number is multiplied by 100 to convert into integer before storing.
   const cost = (props.data.cost / 100).toFixed(2);
   const hideVolunteerSignup = () => {
-    // showVolunteerForm = setShowVolunteerForm(false);
     setShowVolunteerForm(false);
   };
 
@@ -143,7 +135,6 @@ const EventDetail = (props) => {
                 {props.data.isVolunteer ? (
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <b>
-                      {/* <em>Volunteers Needed: {props.data.volunteersNeeded}</em> */}
                       <em>Volunteer Slots OPEN</em>
                     </b>
                     <Button
@@ -151,7 +142,6 @@ const EventDetail = (props) => {
                       onClick={handleAddVolunteers}
                       size="sm"
                       variant="warning"
-                      // onClick={handleAddVolunteers}
                       disabled={
                         props.data.volunteersNeeded === 0 ? true : false
                       }

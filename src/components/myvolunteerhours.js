@@ -28,7 +28,6 @@ const MyVolunteerHours = () => {
         throw Error("Error fetching registered activities!");
       }
     } catch (error) {
-      console.log("error: ", error);
       setError(error.message);
     }
   };

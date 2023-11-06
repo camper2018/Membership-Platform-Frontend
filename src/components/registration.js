@@ -53,7 +53,6 @@ const RegistrationForm = (props) => {
       axios
         .post("/activities/registration", data)
         .then((res) => {
-          console.log("res in post: ", res.status);
           if (res && res.status === 200) {
             setError(null);
             setSuccessPageShow(true);

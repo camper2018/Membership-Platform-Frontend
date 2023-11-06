@@ -13,7 +13,6 @@ import VolunteerEdit from './volunteeredit';
 
 const VolunteerTable = () => {
     const history = useHistory();
-    console.log(localStorage.idOfMember)
     const [volunteerPosts, setVolunteerPosts] = useState([]);
     const [showCheckmark, setShowCheckmark] = useState(true)
     const [volunteerId, setVolunteerId] = useState(null)
@@ -53,7 +52,6 @@ const VolunteerTable = () => {
     var yyyy = today.getFullYear();
 
     today = yyyy + '-' + mm + '-' + dd;
-    console.log(today);
 
     function compareTime(myDate, today) {
         if (new Date(today) > new Date(myDate)) {

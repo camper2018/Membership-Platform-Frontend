@@ -33,7 +33,6 @@ class MemberEdit extends Component {
     } 
     else if(this.props.registerMember){
       this.props.member.Dependents = [...this.state.dependents];
-      console.log("mem2", this.props.member, this.state.dependents)
       this.props.onSave(this.props.member);
     }
     else if(!this.state.isNewMember) {
@@ -450,7 +449,7 @@ class MemberEdit extends Component {
           )
         }
       </tbody>
-      : console.log()
+      : null
       }
       <Modal.Footer>
         {

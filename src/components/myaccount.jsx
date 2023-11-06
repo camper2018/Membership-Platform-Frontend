@@ -34,7 +34,6 @@ class MyAccount extends Component {
   async componentDidMount() {
     try {
       const email = localStorage.user_email;
-      console.log("email:", email);
       // const res = await axios.get(`/members/${localStorage.idOfMember}`);
       const res = await axios.get(`/members/memberByEmail/${email}`);
       this.setState({ myaccount: res.data, error: "" });
@@ -46,7 +45,6 @@ class MyAccount extends Component {
 
   //REGISTER NEW MEMBER
   saveNewMember = async (m) => {
-    console.log("Save new member - ", m);
     if (
       m.Firstname &&
       m.Firstname.length > 0 &&
@@ -92,12 +90,9 @@ class MyAccount extends Component {
       const res = await axios.post("/members", m);
 
       let myAccount;
-      console.log("account$$$$$", account);
-      // if (account) {
-      //   myAccount = account;
-      // } else {
+   
       myAccount = this.state.myaccount;
-      // }
+   
       myAccount.Dependents?.push(res.data);
       this.handleEditSave(myAccount, true);
     }
@@ -149,10 +144,8 @@ class MyAccount extends Component {
 
         this.saveUpdatedMember(member);
         if (isOwner) {
-          console.log("Update member - ", member);
           this.setState({ myaccount: member });
         } else {
-          console.log("Update dependent - ", member);
           let newDep = [...this.state.dependents];
           newDep.splice(
             this.state.dependents.findIndex((el) => el._id === member._id),
@@ -164,7 +157,6 @@ class MyAccount extends Component {
       } else {
         //ADD NEW DEPENDENT
 
-        console.log("Save dependent - ", m);
         m.Guardians.push(this.state.myaccount._id);
         this.saveNewDependent(m);
       }
@@ -246,7 +238,6 @@ class MyAccount extends Component {
 
   //CANCELS MEMBER EDIT
   editMemberOnCancel = (m) => {
-    console.log(m);
     this.setState(
       { myaccount: m },
       this.editMember()
@@ -257,7 +248,7 @@ class MyAccount extends Component {
   editMemberOnSave = (m) => {
     this.editMember();
     // this.hideMemberEditDialog();
-    console.log("Update member - ", m);
+    
     this.saveUpdatedMember(m, true);
   };
 

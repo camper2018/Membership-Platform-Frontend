@@ -321,7 +321,6 @@ const ActivityForm = (props) => {
                       });
                   }}
                   onError={(error, details) => {
-                    console.log("error: ", details, details.phase);
                     details.willEditorRestart = true;
                   }}
                   config={{

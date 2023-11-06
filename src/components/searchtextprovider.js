@@ -10,7 +10,6 @@ class SearchTextProvider extends Component {
                 {   
                     state: this.state,
                     setSearchText: (value) => {
-                        console.log("setSearchText - " +  value);
                         this.setState({ searchText: value});
                     }
                 }

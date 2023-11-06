@@ -138,7 +138,6 @@ class Members extends Component {
   handleMemberEditSave = (m) => {
     try {
       if (this.state.isAddNewMember) {
-        console.log("Save new member - ", m);
         this.saveNewMember(m);
         this.setState({ isAddNewMember: false });
       } else {
@@ -163,7 +162,6 @@ class Members extends Component {
           member.Relationship = m.Relationship;
           member.Guardians = m.Guardians;
           member.Dependents = m.Dependents;
-          console.log("Save update member - ", member);
           this.saveUpdatedMember(member);
           this.setState({ members: this.state.members, tempmember: member }); // fetch from server instead
         }
@@ -209,7 +207,6 @@ class Members extends Component {
   };
 
   updateMember = (m) => {
-    console.log("Update member - ", m);
     this.setState(
       {
         tempmember: m,
@@ -224,7 +221,6 @@ class Members extends Component {
     this.setState({
       isAddDependentMember: true,
     });
-    console.log("Save Dependent member - ", dep, " to ", mem);
     if (!this.state.isAddNewMember && mem._id) {
       dep.Guardians.push(this.state.tempmember._id);
       this.setState({ savedmember: mem });

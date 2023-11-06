@@ -33,7 +33,6 @@ class Street extends Component {
                 <SearchTextContext.Consumer>
                   {(context) => {
                      searchText =  context.state.searchText;
-                     console.log("searchText to use - " +  searchText);
                    }
                   }
                 </SearchTextContext.Consumer>

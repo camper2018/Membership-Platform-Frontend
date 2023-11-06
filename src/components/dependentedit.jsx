@@ -227,7 +227,6 @@ class DependentEdit extends Component {
 
       </Modal.Body>
       <Modal.Footer>
-        {/* <Button variant="link" className="depButton">Add Dependent</Button> */}
         <Button variant="secondary" onClick={this.handleCancel}>Cancel</Button>
         <Button variant="primary" onClick={this.handleSave}>Save</Button>
       </Modal.Footer>

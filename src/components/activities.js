@@ -72,7 +72,7 @@ const Activities = () => {
           axios
             .delete(`/upload/${imageIds.join(",")}`)
             .then((response) => {
-              console.log(response);
+              console.log(response.status);
             })
             .catch((error) => {
               console.log("ERROR:", error.message);

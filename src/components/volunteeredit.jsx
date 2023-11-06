@@ -43,7 +43,6 @@ function VolunteerEdit(props) {
 
 
     const fetchVolunteers = (id) => {
-        console.log(id);
         axios
             .get("/volunteer/" + id)
             .then((res) => {
